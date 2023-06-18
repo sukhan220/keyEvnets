@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            color: aliceblue;
+
+        }
+        body{
+            width: 98vw;
+            height: 99vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            width: 70%;
+            height: 95%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #F9BC60;
+            font-size: 32px;
+            border-radius: 8px;
+        }
+
+        input{
+            width: 100px;
+            height: 30px;
+            border: none;
+            background-color:#004643;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+        }
+        input:focus{
+            outline: none;
+        }
+        label{
+            color: aliceblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="keyDown">
+            <label for="keydown">onkeydown</label>
+            <input type="text" id="keydown">
+    
+        </div>
+        <div class="keyUp">
+            <label for="keyup">onkeyup</label>
+            <input type="text" id="keyup">
+    
+    
+        </div>
+       <div class="keyPress">
+        <label for="keypress">onKeypress</label>
+        <input type="text" id="keypress">
+    
+       </div>
+       <div class="data">
+
+       </div>
+
+    </div>
+   
+  
+    
+</body>
+<script>
+    const key =document.querySelectorAll("input");
+    const d= document.querySelector(".data");
+
+    key[0].onkeydown=function(){
+       document.body.style.backgroundColor= this.value;
+       d.innerHTML=this.value;
+    }
+    key[1].onkeyup=function(){
+       document.body.style.backgroundColor= key[1].value;
+       d.innerHTML=key[1].value;
+    }
+    key[2].onkeypress=function(){
+       document.body.style.backgroundColor= key[2].value;
+       d.innerHTML=key[2].value;
+    }
+</script>
+</html>
